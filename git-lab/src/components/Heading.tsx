@@ -3,22 +3,22 @@ import clsx from "clsx";
 import { ReactNode } from 'react';
 
 
-export interface TextProps{
+export interface HeadingProps{
     size?:  'sm' | 'md' | 'lg' ;
     children: ReactNode;
     asChild?: boolean;
 }
 
-export function Text({ size = 'md', children, asChild} : TextProps) {
+export function Heading({ size = 'md', children, asChild} : HeadingProps) {
 
-    const Comp = asChild ? Slot: 'span';
+    const Comp = asChild ? Slot: 'h2';
     return(
         <Comp className={clsx(
-            'text-gray-100 font-sans',
+            'text-gray-100 font-bold font-sans',
             {
-                'text-xs' :     size === 'sm',
-                'text-sm' :     size === 'md',
-                'text-lg' :     size === 'lg',
+                'text-lg' :     size === 'sm',
+                'text-xl' :     size === 'md',
+                'text-2xl':     size === 'lg',
 
             }
             )}
